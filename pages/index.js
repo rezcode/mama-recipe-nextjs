@@ -1,7 +1,7 @@
 import React from "react";
 import NewRecipes from "../components/NewRecipes";
 import Footer from "../components/Footer";
-import RecipeList from "../components/RecipeList";
+import PopularRecipes from "../components/PopularRecipes";
 
 const home = () => {
   return (
@@ -27,7 +27,7 @@ const home = () => {
                   <div className="row mt-5 mb-3">
                     <h5>Popular Recipes</h5>
                   </div>
-                  <RecipeList />
+                  <PopularRecipes />
                 </div>
               </div>
               <Footer />

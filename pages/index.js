@@ -10,7 +10,7 @@ const home = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-4">
-              <div className="row mt-3">
+              <div className="row mt-3" style={{ height: "100vh" }}>
                 <div className="container">
                   <input
                     className="form-control form-control-lg"

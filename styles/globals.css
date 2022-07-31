@@ -29,3 +29,21 @@ a {
     background: black;
   }
 }
+
+/* Button */
+.btn-secondary {
+  background-color: #e7e7e7 !important;
+  border: none !important;
+}
+
+.btn-secondary:hover {
+  color: black !important;
+  background-color: #d9d5d5 !important;
+}
+
+.btn-secondary:focus {
+  color: black !important;
+  box-shadow: none !important;
+}
+
+/* Button end */

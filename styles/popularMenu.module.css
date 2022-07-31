@@ -24,7 +24,8 @@
 }
 
 .buttonSave {
-  padding-right: 0px;
+  padding-right: 5px;
+  text-align: end;
 }
 
 .buttonLike {

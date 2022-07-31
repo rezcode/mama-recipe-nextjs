@@ -1,0 +1,21 @@
+.pointer:hover {
+  cursor: pointer;
+}
+
+.buttonProfile {
+  position: sticky;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-top: 283px;
+  margin-bottom: 0px;
+}
+
+.buttonPhoto button {
+  color: black;
+  font-weight: lighter;
+}
+
+.buttonCancel button {
+  color: black;
+}

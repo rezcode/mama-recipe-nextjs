@@ -1,0 +1,32 @@
+.navBack {
+  border-radius: 10px;
+  background-color: #efefef !important;
+  text-align: center;
+  width: 45px;
+}
+
+.verticalCenter p {
+  color: #f1cd31;
+  font-size: larger;
+}
+
+.contentTitle p {
+  margin: 0px;
+}
+
+.title {
+  font-size: 16px;
+}
+
+.ingredients {
+  font-size: 12px;
+  color: #6e80b0;
+}
+
+.buttonSave {
+  padding-right: 0px;
+}
+
+.buttonLike {
+  padding-left: 0px;
+}

@@ -4,7 +4,7 @@ import imgRecipe from "../public/images/example-img.jpg";
 import { AiFillStar } from "react-icons/ai";
 import homeStyles from "../styles/Home.module.css";
 
-const RecipeList = () => {
+const PopularRecipes = () => {
   return (
     <>
       <div className="row mb-3">
@@ -44,4 +44,4 @@ const RecipeList = () => {
   );
 };
 
-export default RecipeList;
+export default PopularRecipes;

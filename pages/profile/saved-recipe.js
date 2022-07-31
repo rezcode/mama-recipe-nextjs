@@ -5,7 +5,7 @@ import imgRecipe from "../../public/images/example-img.jpg";
 import homeStyles from "../../styles/Home.module.css";
 import HeaderProfile from "../../components/HeaderProfile";
 
-const savedRecipe = () => {
+const SavedRecipe = () => {
   return (
     <>
       <div className="container">
@@ -46,4 +46,4 @@ const savedRecipe = () => {
   );
 };
 
-export default savedRecipe;
+export default SavedRecipe;

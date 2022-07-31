@@ -3,7 +3,7 @@ import profileStyle from "../../styles/profile.module.css";
 import Image from "next/image";
 import imageUser from "../../public/images/img-user-default.png";
 
-const user = () => {
+const ProfileUser = () => {
   return (
     <>
       <div className="row justify-content-center">
@@ -22,4 +22,4 @@ const user = () => {
   );
 };
 
-export default user;
+export default ProfileUser;

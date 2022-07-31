@@ -5,7 +5,7 @@ import imgRecipe from "../../public/images/example-img.jpg";
 import homeStyles from "../../styles/Home.module.css";
 import HeaderProfile from "../../components/HeaderProfile";
 
-const likedRecipe = () => {
+const LikedRecipe = () => {
   return (
     <>
       <div className="container">
@@ -46,4 +46,4 @@ const likedRecipe = () => {
   );
 };
 
-export default likedRecipe;
+export default LikedRecipe;

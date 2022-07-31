@@ -3,6 +3,7 @@
   background-color: #efefef !important;
   text-align: center;
   width: 45px;
+  cursor: pointer;
 }
 
 .verticalCenter p {

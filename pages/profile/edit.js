@@ -9,7 +9,7 @@ const EditProfile = () => {
         <div className="row justify-content-center">
           <div className="col-md-4">
             <HeaderProfile header={"Edit Profile"} />
-            <div className="container">
+            <div className="container" style={{ minHeight: "80vh" }}>
               <div className="row mt-4">
                 <p className={profileStyle.pointer}>Change Photo Profile</p>
               </div>

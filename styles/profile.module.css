@@ -1,5 +1,22 @@
+.bgTopWrapper {
+  background-color: #eec302;
+  height: 50vh;
+}
+
+.bgTopWrapper img {
+  border-radius: 50%;
+  width: 100px !important;
+  height: 100px !important;
+  object-fit: cover;
+}
+
 .pointer:hover {
   cursor: pointer;
+}
+
+.pointer {
+  color: #3f3a3a;
+  font-weight: lighter;
 }
 
 .buttonProfile {
@@ -7,16 +24,17 @@
   bottom: 0px;
   left: 0px;
   right: 0px;
-  margin-top: 568px;
   margin-bottom: 0px;
 }
 
 .buttonPhoto button {
   color: black;
   font-weight: lighter;
+  border-radius: 15px;
 }
 
 .buttonCancel button {
   color: black;
   margin-bottom: 10px;
+  border-radius: 15px;
 }

@@ -10,6 +10,18 @@
   object-fit: cover;
 }
 
+.bgBotWrapper {
+  background-color: white;
+  height: 50vh;
+  border-radius: 20px;
+  margin-top: -50px;
+}
+
+.wrapperContent {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
 .pointer:hover {
   cursor: pointer;
 }

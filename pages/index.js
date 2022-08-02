@@ -30,10 +30,10 @@ const home = () => {
                   <PopularRecipes />
                 </div>
               </div>
-              <Footer />
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

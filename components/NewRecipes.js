@@ -8,17 +8,17 @@ import homeStyles from "../styles/Home.module.css";
 
 const NewRecipes = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 2.5,
     slidesToScroll: 1,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2.5,
           slidesToScroll: 3,
           infinite: true,
           dots: true,
@@ -27,7 +27,7 @@ const NewRecipes = () => {
       {
         breakpoint: 1000,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 2.5,
           slidesToScroll: 2,
           initialSlide: 2,
         },
@@ -35,7 +35,7 @@ const NewRecipes = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 2.5,
           slidesToScroll: 2,
           initialSlide: 2,
         },
@@ -43,7 +43,7 @@ const NewRecipes = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2.5,
           slidesToScroll: 1,
         },
       },

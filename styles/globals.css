@@ -46,4 +46,33 @@ a {
   box-shadow: none !important;
 }
 
+/* =========================================== */
+
+.btn-warning {
+  color: white !important;
+  height: 50px;
+  border-radius: 15px !important;
+}
+
 /* Button end */
+
+/* custom tabs recipe detail */
+#detailPages .nav-link {
+  color: black;
+}
+
+#detailPages .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  border-bottom: 3px solid #eec302 !important;
+}
+
+#detailPages .nav-tabs {
+  --bs-nav-tabs-border-color: "none";
+  --bs-nav-tabs-border-width: "none";
+}
+
+#detailPages .form-control {
+  border: none;
+  background-color: #faf7ed;
+  border-radius: 15px;
+}

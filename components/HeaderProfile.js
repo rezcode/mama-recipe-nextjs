@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { FiChevronLeft } from "react-icons/fi";
 import popularMenuStyle from "../styles/popularMenu.module.css";
 
@@ -7,9 +8,11 @@ const HeaderProfile = (props) => {
     <>
       <div className="row mt-3">
         <div className="col-4">
-          <div className={popularMenuStyle.navBack}>
-            <FiChevronLeft size={40} />
-          </div>
+          <Link href="/profile/user">
+            <div className={popularMenuStyle.navBack}>
+              <FiChevronLeft size={40} />
+            </div>
+          </Link>
         </div>
         <div className="col-7">
           <div className={popularMenuStyle.verticalCenter}>

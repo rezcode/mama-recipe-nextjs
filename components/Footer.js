@@ -4,23 +4,32 @@ import { FiHome } from "react-icons/fi";
 import { MdOutlineAddBox } from "react-icons/md";
 import { BsChat } from "react-icons/bs";
 import { FiUser } from "react-icons/fi";
+import Link from "next/link";
 
 const Footer = () => {
   return (
     <div
       className={`row align-items-center justify-content-center ${homeStyle.footer}`}
     >
-      <div className="col-3">
-        <FiHome size={25} className={homeStyle.pointer} />
-      </div>
-      <div className="col-3">
-        <MdOutlineAddBox size={27} className={homeStyle.pointer} />
-      </div>
-      <div className="col-3">
-        <BsChat size={25} className={homeStyle.pointer} />
-      </div>
-      <div className="col-3">
-        <FiUser size={25} className={homeStyle.pointer} />
+      <div className="col-md-4">
+        <div className={`row justify-content-center`}>
+          <div className="col-3">
+            <Link href="/">
+              <FiHome size={25} className={homeStyle.pointer} />
+            </Link>
+          </div>
+          <div className="col-3">
+            <MdOutlineAddBox size={27} className={homeStyle.pointer} />
+          </div>
+          <div className="col-3">
+            <BsChat size={25} className={homeStyle.pointer} />
+          </div>
+          <div className="col-3">
+            <Link href="/profile/user">
+              <FiUser size={25} className={homeStyle.pointer} />
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

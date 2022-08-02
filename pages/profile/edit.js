@@ -36,7 +36,7 @@ const EditProfile = () => {
                   </div>
                 </div>
               </div>
-              <div className="row mt-1">
+              <div className="row mt-2">
                 <div className="container">
                   <div className={`d-grid ${profileStyle.buttonCancel}`}>
                     <button type="button" className="btn btn-secondary">

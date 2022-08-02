@@ -5,7 +5,8 @@ import backgroundImg from "../../public/images/background-recipe-example.jpg";
 import imgUser from "../../public/images/img-user-default.png";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import { FiBookmark } from "react-icons/fi";
+import Link from "next/link";
+import { FiBookmark, FiChevronLeft } from "react-icons/fi";
 import { BiLike } from "react-icons/bi";
 import { BsPlay } from "react-icons/bs";
 
@@ -14,7 +15,12 @@ const recipeDetail = () => {
     <>
       <div id="detailPages" className="row justify-content-center">
         <div className="col-md-4 py-0">
-          <div className={`row align-items-end ${recipeStyle.wrapperTop}`}>
+          <div className={`row ${recipeStyle.wrapperTop}`}>
+            <div className={recipeStyle.backArrow}>
+              <Link href="/" passHref>
+                <FiChevronLeft size={40} color="white" />
+              </Link>
+            </div>
             <div className={recipeStyle.title}>
               <div>
                 <div className="row">
@@ -29,9 +35,9 @@ const recipeDetail = () => {
                     </div>
                   </div>
                 </div>
+                <p className="m-0">Sandwich with Egg</p>
+                <span>By Chef Ronald Humson</span>
               </div>
-              <p className="m-0">Sandwich with Egg</p>
-              <span>By Chef Ronald Humson</span>
             </div>
             <Image src={backgroundImg} />
           </div>
@@ -44,7 +50,7 @@ const recipeDetail = () => {
               >
                 <Tab eventKey="ingredients" title="Ingredients">
                   <div className="container">
-                    <div className="row">
+                    <div className="row mx-1">
                       <div className={recipeStyle.ingredients}>
                         - 2 slices whole-grain bread (bakery-fresh recommended)
                         - 1 tablespoon hummus - 2 slices tomato - 1/2 small

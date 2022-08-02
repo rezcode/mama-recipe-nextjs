@@ -9,11 +9,23 @@
 
 .title {
   width: 149px;
-  margin-left: 15px;
   z-index: 3;
   font-size: 12px;
   position: absolute;
-  margin-bottom: 10px;
+  bottom: 8px;
+  left: 16px;
+}
+
+.backArrow {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 3;
+  padding-left: 0px;
+}
+
+.backArrow svg {
+  cursor: pointer;
 }
 
 .title span {

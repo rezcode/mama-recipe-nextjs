@@ -14,18 +14,20 @@ const Footer = () => {
       <div className="col-md-4">
         <div className={`row justify-content-center`}>
           <div className="col-3">
-            <Link href="/">
+            <Link href="/" passHref>
               <FiHome size={25} className={homeStyle.pointer} />
             </Link>
           </div>
           <div className="col-3">
-            <MdOutlineAddBox size={27} className={homeStyle.pointer} />
+            <Link href="/recipe/add" passHref>
+              <MdOutlineAddBox size={27} className={homeStyle.pointer} />
+            </Link>
           </div>
           <div className="col-3">
             <BsChat size={25} className={homeStyle.pointer} />
           </div>
           <div className="col-3">
-            <Link href="/profile/user">
+            <Link href="/profile/user" passHref>
               <FiUser size={25} className={homeStyle.pointer} />
             </Link>
           </div>

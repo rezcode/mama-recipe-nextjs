@@ -8,7 +8,7 @@ const HeaderProfile = (props) => {
     <>
       <div className="row mt-3">
         <div className="col-4">
-          <Link href="/profile/user">
+          <Link href="/profile/user" passHref>
             <div className={popularMenuStyle.navBack}>
               <FiChevronLeft size={40} />
             </div>

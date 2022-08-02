@@ -46,8 +46,6 @@ a {
   box-shadow: none !important;
 }
 
-/* =========================================== */
-
 .btn-warning {
   color: white !important;
   height: 50px;
@@ -57,6 +55,7 @@ a {
 /* Button end */
 
 /* custom tabs recipe detail */
+
 #detailPages .nav-link {
   color: black;
 }
@@ -75,4 +74,21 @@ a {
   border: none;
   background-color: #faf7ed;
   border-radius: 15px;
+}
+
+/* Tabs recipe detail end */
+
+#addRecipePages .input-group-text {
+  border: none;
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  height: 60px;
+}
+
+#addRecipePages .form-control {
+  border: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: none;
 }

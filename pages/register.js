@@ -78,8 +78,16 @@ const register = () => {
               </div>
               <div className="d-grid gap-2">
                 <button className="btn btn-warning" type="button">
-                  LOG IN
+                  CREATE
                 </button>
+                <div>
+                  <p className={`text-center ${authStyle.forgotPassword}`}>
+                    Already have account?{" "}
+                    <Link href="/login" passHref>
+                      <span>Log in Here</span>
+                    </Link>
+                  </p>
+                </div>
               </div>
             </form>
           </div>

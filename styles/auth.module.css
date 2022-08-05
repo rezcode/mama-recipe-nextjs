@@ -45,3 +45,10 @@
   font-size: smaller;
   font-weight: lighter;
 }
+
+.registerWrapper {
+  min-height: 100vh;
+  padding: 0px;
+  position: relative;
+  background-color: #e5e5e5;
+}

@@ -9,8 +9,8 @@ import Link from "next/link";
 const register = () => {
   return (
     <>
-      <div id="loginPage" className="row justify-content-center">
-        <div className={`col-md-4 ${authStyle.bodyWrapper}`}>
+      <div id="registerPage" className="row justify-content-center">
+        <div className={`col-md-4 ${authStyle.registerWrapper}`}>
           <div className="row">
             <div className={authStyle.navBack}>
               <Link href="/login" passHref>

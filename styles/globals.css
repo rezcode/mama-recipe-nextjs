@@ -113,3 +113,43 @@ a {
   box-shadow: none;
   background-color: #f5f5f5;
 }
+
+/* Home page */
+
+#homePage .input-group-text {
+  border: none;
+  background-color: #f5f5f5;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  height: 60px;
+}
+
+#homePage .form-control {
+  border: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: none;
+  background-color: #f5f5f5;
+}
+
+/* Home page end */
+
+/* Register Page */
+
+#registerPage .input-group-text {
+  border: none;
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  height: 60px;
+}
+
+#registerPage .form-control {
+  border: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: none;
+  background-color: white;
+}
+
+/* Register page done */

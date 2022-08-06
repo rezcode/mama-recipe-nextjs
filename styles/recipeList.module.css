@@ -1,0 +1,18 @@
+.recipeImg img {
+  border-radius: 15px !important;
+  object-fit: cover;
+}
+
+.title {
+  margin: 0px;
+}
+
+.rating {
+  font-size: smaller;
+}
+
+.rating span {
+  color: #6e80b0;
+  font-size: smaller;
+  margin-left: 5px;
+}

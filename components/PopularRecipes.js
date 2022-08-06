@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import imgRecipe from "../public/images/example-img.jpg";
 import { AiFillStar } from "react-icons/ai";
 import homeStyles from "../styles/Home.module.css";
 

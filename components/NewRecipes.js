@@ -4,30 +4,33 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Image from "next/image";
 import homeStyles from "../styles/Home.module.css";
+import Link from "next/link";
 
 const NewRecipes = (props) => {
   const renderNewRecipe = () => {
     const jsx = props?.data?.map((item, index) => {
       return (
         <>
-          <div key={index} className="ml-2">
-            <div className={`card ${homeStyles.cardImageNewRecipes}`}>
-              <Image
-                src={`http://localhost:8000/${item.food_image.replace(
-                  "public/",
-                  ""
-                )}`}
-                layout="fill"
-                className={homeStyles.ImageNewRecipes}
-                alt="Picture of the author"
-              />
-              <div className="card-img-overlay">
-                <h5 className={`card-title ${homeStyles.titleNewRecipes}`}>
-                  {item.title}
-                </h5>
+          <Link href={`recipe/${item.id}`} passHref>
+            <div key={index} className="ml-2">
+              <div className={`card ${homeStyles.cardImageNewRecipes}`}>
+                <Image
+                  src={`http://localhost:8000/${item.food_image.replace(
+                    "public/",
+                    ""
+                  )}`}
+                  layout="fill"
+                  className={homeStyles.ImageNewRecipes}
+                  alt="Picture of the author"
+                />
+                <div className="card-img-overlay">
+                  <h5 className={`card-title ${homeStyles.titleNewRecipes}`}>
+                    {item.title}
+                  </h5>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         </>
       );
     });
@@ -79,69 +82,7 @@ const NewRecipes = (props) => {
 
   return (
     <div>
-      <Slider {...settings}>
-        {renderNewRecipe()}
-        {/* <div className="ml-2">
-          <div className={`card ${homeStyles.cardImageNewRecipes}`}>
-            <Image
-              src={imgRecipe}
-              layout="fill"
-              className={homeStyles.ImageNewRecipes}
-              alt="Picture of the author"
-            />
-            <div className="card-img-overlay">
-              <h5 className={`card-title ${homeStyles.titleNewRecipes}`}>
-                Card title
-              </h5>
-            </div>
-          </div>
-        </div>
-        <div className="ml-2">
-          <div className={`card ${homeStyles.cardImageNewRecipes}`}>
-            <Image
-              src={imgRecipe}
-              layout="fill"
-              className={homeStyles.ImageNewRecipes}
-              alt="Picture of the author"
-            />
-            <div className="card-img-overlay">
-              <h5 className={`card-title ${homeStyles.titleNewRecipes}`}>
-                Card title
-              </h5>
-            </div>
-          </div>
-        </div>
-        <div className="ml-2">
-          <div className={`card ${homeStyles.cardImageNewRecipes}`}>
-            <Image
-              src={imgRecipe}
-              layout="fill"
-              className={homeStyles.ImageNewRecipes}
-              alt="Picture of the author"
-            />
-            <div className="card-img-overlay">
-              <h5 className={`card-title ${homeStyles.titleNewRecipes}`}>
-                Card title
-              </h5>
-            </div>
-          </div>
-        </div>
-        <div className="ml-2">
-          <div className={`card ${homeStyles.cardImageNewRecipes}`}>
-            <Image
-              src={imgRecipe}
-              layout="fill"
-              className={homeStyles.ImageNewRecipes}
-              alt="Picture of the author"
-            />
-            <div className="card-img-overlay">
-              <h5 className={`card-title ${homeStyles.titleNewRecipes}`}>
-                Card title
-              </h5>
-            </div>
-          </div>
-        </div> */}
-      </Slider>
+      <Slider {...settings}>{renderNewRecipe()}</Slider>
     </div>
   );
 };

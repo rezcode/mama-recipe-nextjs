@@ -5,6 +5,8 @@
 
 .wrapperTop img {
   object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .title {
@@ -12,7 +14,7 @@
   z-index: 3;
   font-size: 12px;
   position: absolute;
-  bottom: 8px;
+  bottom: 60px;
   left: 16px;
 }
 
@@ -72,6 +74,7 @@
   border-top-left-radius: 10%;
   padding-top: 30px;
   position: sticky;
+  margin-top: -50px;
 }
 
 .buttonClicked svg {

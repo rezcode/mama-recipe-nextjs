@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import recipeStyle from "../../styles/recipe.module.css";
 import Image from "next/image";
 import backgroundImg from "../../public/images/background-recipe-example.jpg";
@@ -6,11 +6,32 @@ import imgUser from "../../public/images/img-user-default.png";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FiBookmark, FiChevronLeft } from "react-icons/fi";
 import { BiLike } from "react-icons/bi";
 import { BsPlay } from "react-icons/bs";
+import axios from "axios";
 
 const recipeDetail = () => {
+  const [detailRecipe, setDetailRecipe] = useState([]);
+
+  const router = useRouter();
+  const { id } = router.query;
+
+  useEffect(() => {
+    getDetailData();
+  }, [id]);
+
+  const getDetailData = () => {
+    axios.get(`http://localhost:8000/recipes/${id}`).then((res) => {
+      const dataRecipe = res?.data?.data[0];
+      setDetailRecipe(dataRecipe);
+    });
+    // .catch((err) => {
+    //   console.log(err);
+    // });
+  };
+
   return (
     <>
       <div id="detailPages" className="row justify-content-center">
@@ -21,7 +42,7 @@ const recipeDetail = () => {
                 <FiChevronLeft size={40} color="white" />
               </Link>
             </div>
-            <div className={recipeStyle.title}>
+            <div className={recipeStyle?.title}>
               <div>
                 <div className="row">
                   <div className="col-4 text-center">
@@ -35,11 +56,17 @@ const recipeDetail = () => {
                     </div>
                   </div>
                 </div>
-                <p className="m-0">Sandwich with Egg</p>
-                <span>By Chef Ronald Humson</span>
+                <p className="m-0">{detailRecipe?.title}</p>
+                <span>By {detailRecipe?.recipe_owner}</span>
               </div>
             </div>
-            <Image src={backgroundImg} />
+            <Image
+              src={`http://localhost:8000/${detailRecipe?.food_image?.replace(
+                "public/",
+                ""
+              )}`}
+              layout="fill"
+            />
           </div>
           <div className={`row ${recipeStyle.wrapperBot}`}>
             <div className={`container ${recipeStyle.tabMenu}`}>
@@ -52,10 +79,7 @@ const recipeDetail = () => {
                   <div className="container">
                     <div className="row mx-1">
                       <div className={recipeStyle.ingredients}>
-                        - 2 slices whole-grain bread (bakery-fresh recommended)
-                        - 1 tablespoon hummus - 2 slices tomato - 1/2 small
-                        cucumber, thinly sliced lengthwise - 1 slice low-fat
-                        cheese
+                        {detailRecipe?.ingredients}
                       </div>
                     </div>
                   </div>

@@ -15,9 +15,16 @@
   cursor: pointer;
 }
 
+.pointer span {
+  color: #6d61f2;
+}
+
 /* popular */
-.imagePopular {
+.imagePopular img {
   border-radius: 15px;
+  width: 75px !important;
+  height: 75px !important;
+  object-fit: cover;
 }
 
 .title {
@@ -26,6 +33,11 @@
 
 .rating {
   font-size: 12px;
+}
+
+.rating span {
+  color: #6e80b0;
+  padding-left: 5px;
 }
 
 /* newRecipe */
@@ -46,4 +58,5 @@
   padding-top: 100px;
   color: white;
   font-weight: bolder;
+  font-size: 14px;
 }

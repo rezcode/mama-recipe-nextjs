@@ -3,10 +3,37 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Image from "next/image";
-import imgRecipe from "../public/images/example-img.jpg";
 import homeStyles from "../styles/Home.module.css";
 
-const NewRecipes = () => {
+const NewRecipes = (props) => {
+  const renderNewRecipe = () => {
+    const jsx = props?.data?.map((item, index) => {
+      return (
+        <>
+          <div key={index} className="ml-2">
+            <div className={`card ${homeStyles.cardImageNewRecipes}`}>
+              <Image
+                src={`http://localhost:8000/${item.food_image.replace(
+                  "public/",
+                  ""
+                )}`}
+                layout="fill"
+                className={homeStyles.ImageNewRecipes}
+                alt="Picture of the author"
+              />
+              <div className="card-img-overlay">
+                <h5 className={`card-title ${homeStyles.titleNewRecipes}`}>
+                  {item.title}
+                </h5>
+              </div>
+            </div>
+          </div>
+        </>
+      );
+    });
+    return jsx;
+  };
+
   const settings = {
     dots: false,
     infinite: false,
@@ -53,7 +80,8 @@ const NewRecipes = () => {
   return (
     <div>
       <Slider {...settings}>
-        <div className="ml-2">
+        {renderNewRecipe()}
+        {/* <div className="ml-2">
           <div className={`card ${homeStyles.cardImageNewRecipes}`}>
             <Image
               src={imgRecipe}
@@ -112,7 +140,7 @@ const NewRecipes = () => {
               </h5>
             </div>
           </div>
-        </div>
+        </div> */}
       </Slider>
     </div>
   );

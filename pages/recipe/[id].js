@@ -24,13 +24,15 @@ const recipeDetail = () => {
   }, [id]);
 
   const getDetailData = () => {
-    axios.get(`http://localhost:8000/recipes/${id}`).then((res) => {
-      const dataRecipe = res?.data?.data[0];
-      setDetailRecipe(dataRecipe);
-    });
-    // .catch((err) => {
-    //   console.log(err);
-    // });
+    axios
+      .get(`http://localhost:8000/recipes/${id}`)
+      .then((res) => {
+        const dataRecipe = res?.data?.data[0];
+        setDetailRecipe(dataRecipe);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const getCommentData = () => {
@@ -45,8 +47,6 @@ const recipeDetail = () => {
         console.log(err);
       });
   };
-
-  console.log(commentUserData);
 
   return (
     <>

@@ -1,13 +1,27 @@
-import React from "react";
-import profileStyle from "../../styles/profile.module.css";
+import React, { useEffect, useState } from "react";
+import profileStyle from "../../../styles/profile.module.css";
 import Image from "next/image";
-import imageUser from "../../public/images/img-user-default.png";
+import imageUser from "../../../public/images/img-user-default.png";
 import { FiUser, FiAward, FiChevronRight, FiBookmark } from "react-icons/fi";
 import { BiLike } from "react-icons/bi";
-import Footer from "../../components/Footer";
+import Footer from "../../../components/Footer";
 import Link from "next/link";
+import axios from "axios";
 
 const ProfileUser = () => {
+  const [userDataStorage, setUserDataStorage] = useState({});
+  const [userProfile, setUserProfile] = useState([]);
+
+  useEffect(() => {
+    setUserDataStorage(JSON.parse(localStorage?.getItem("userDataStorage")));
+  }, []);
+
+  // const getProfileUser = () => {
+  //   axios.get(`http://localhost:8000/users/${}`);
+  // };
+
+  console.log(userDataStorage.id);
+
   return (
     <>
       <div className="row justify-content-center">
@@ -89,7 +103,7 @@ const ProfileUser = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer data={userDataStorage} />
     </>
   );
 };

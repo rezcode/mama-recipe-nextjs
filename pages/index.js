@@ -12,8 +12,10 @@ const home = (props) => {
   const [popularRecipe] = useState(props?.popularRecipes?.data);
   const [allRecipes] = useState(props?.allRecipes?.data);
   const [search, setSearch] = useState("");
+  const [userDataStorage, setUserDataStorage] = useState({});
 
   useEffect(() => {
+    setUserDataStorage(JSON.parse(localStorage?.getItem("userDataStorage")));
     allRecipes;
     newRecipe;
     popularRecipe;
@@ -66,7 +68,7 @@ const home = (props) => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer data={userDataStorage} />
     </>
   );
 };

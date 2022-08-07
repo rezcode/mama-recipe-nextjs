@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import recipeStyle from "../../styles/recipe.module.css";
 import Image from "next/image";
-import backgroundImg from "../../public/images/background-recipe-example.jpg";
-import imgUser from "../../public/images/img-user-default.png";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Link from "next/link";
@@ -11,15 +9,18 @@ import { FiBookmark, FiChevronLeft } from "react-icons/fi";
 import { BiLike } from "react-icons/bi";
 import { BsPlay } from "react-icons/bs";
 import axios from "axios";
+import CommentsRecipe from "../../components/CommentsRecipe";
 
 const recipeDetail = () => {
   const [detailRecipe, setDetailRecipe] = useState([]);
+  const [commentUserData, setCommentUserData] = useState([]);
 
   const router = useRouter();
   const { id } = router.query;
 
   useEffect(() => {
     getDetailData();
+    getCommentData();
   }, [id]);
 
   const getDetailData = () => {
@@ -31,6 +32,21 @@ const recipeDetail = () => {
     //   console.log(err);
     // });
   };
+
+  const getCommentData = () => {
+    axios
+      .get(`http://localhost:8000/comments/recipe/${id}`)
+      .then((res) => {
+        // console.log(res);
+        const response = res?.data;
+        setCommentUserData(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  console.log(commentUserData);
 
   return (
     <>
@@ -139,21 +155,7 @@ const recipeDetail = () => {
                       <div className="row">
                         <p className={recipeStyle.lighter}>Comment :</p>
                       </div>
-                      <div className="row">
-                        <div className="col-3">
-                          <div className={recipeStyle.commendAvatar}>
-                            <Image src={imgUser} className="text-center" />
-                          </div>
-                        </div>
-                        <div className="col-9">
-                          <div className={`row ${recipeStyle.userName}`}>
-                            Ayudia
-                          </div>
-                          <div className={`row ${recipeStyle.userComment}`}>
-                            Nice recipe. simple and delicious, thankyou
-                          </div>
-                        </div>
-                      </div>
+                      <CommentsRecipe data={commentUserData} />
                     </div>
                   </div>
                 </Tab>

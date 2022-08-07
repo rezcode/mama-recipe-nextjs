@@ -100,8 +100,8 @@
 
 .commendAvatar img {
   border-radius: 50%;
-  width: 62px !important;
-  height: 62px !important;
+  width: 70px !important;
+  height: 70px !important;
   object-fit: cover;
 }
 

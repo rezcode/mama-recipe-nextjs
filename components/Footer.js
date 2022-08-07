@@ -18,7 +18,7 @@ const Footer = (props) => {
         text: "You need to login first",
       }).then((result) => (result.isConfirmed ? router.push("/login") : null));
     } else {
-      router.push(`/profile/detail/${props?.data?.id}`);
+      router.push(`/profile/user`);
     }
   };
 

@@ -1,26 +1,51 @@
 import React, { useEffect, useState } from "react";
-import profileStyle from "../../../styles/profile.module.css";
+import profileStyle from "../../styles/profile.module.css";
 import Image from "next/image";
-import imageUser from "../../../public/images/img-user-default.png";
+import imageUser from "../../public/images/img-user-default.png";
 import { FiUser, FiAward, FiChevronRight, FiBookmark } from "react-icons/fi";
 import { BiLike } from "react-icons/bi";
-import Footer from "../../../components/Footer";
+import Footer from "../../components/Footer";
 import Link from "next/link";
 import axios from "axios";
+import { useRouter } from "next/router";
+import Swal from "sweetalert2";
 
 const ProfileUser = () => {
   const [userDataStorage, setUserDataStorage] = useState({});
+  const [logOut, setLogOut] = useState(null);
   const [userProfile, setUserProfile] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     setUserDataStorage(JSON.parse(localStorage?.getItem("userDataStorage")));
-  }, []);
+    setLogOut(localStorage?.getItem("userDataStorage"));
+    getProfileUser();
+  }, [userDataStorage?.name]);
 
-  // const getProfileUser = () => {
-  //   axios.get(`http://localhost:8000/users/${}`);
-  // };
+  const handleLogout = () => {
+    setLogOut(localStorage.clear());
+    Swal.fire({
+      icon: "success",
+      text: "Logout success",
+    }).then((result) => (result.isConfirmed ? router.replace("/") : null));
+  };
 
-  console.log(userDataStorage.id);
+  const config = {
+    headers: {
+      Authorization: `Bearer ${userDataStorage?.token}`,
+    },
+  };
+
+  const getProfileUser = () => {
+    axios
+      .get(`http://localhost:8000/users/${userDataStorage?.id}`, config)
+      .then((res) => {
+        setUserProfile(res?.data?.data[0]);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -30,8 +55,25 @@ const ProfileUser = () => {
             className={`row align-items-center justify-content-center ${profileStyle.bgTopWrapper}`}
           >
             <div className="col-4 text-center">
-              <Image src={imageUser} className="text-center" />
-              <p className="text-white">Mareta Lopeda</p>
+              <Image
+                src={`http://localhost:8000/${userProfile?.image_profile?.replace(
+                  "public/",
+                  ""
+                )}`}
+                className="text-center"
+                height={64}
+                width={64}
+              />
+              <p className="text-white">{userProfile?.name}</p>
+              <div>
+                <button
+                  type="button"
+                  className="btn btn-outline-light btn-sm"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+              </div>
             </div>
           </div>
           <div className="container">

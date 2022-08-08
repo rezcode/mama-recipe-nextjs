@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderProfile from "../../components/HeaderProfile";
+import HeaderProfile from "../../components/headerProfile";
 import profileStyle from "../../styles/profile.module.css";
 
 const EditProfile = () => {

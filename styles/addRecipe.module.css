@@ -6,3 +6,32 @@
 .bodyWrapper h4 {
   color: #efc81a;
 }
+
+/* add button upload */
+.labelUpload {
+  background-color: #ffffff;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.iconUpload {
+  text-align: center;
+  position: relative;
+}
+
+.form-add-recipe-bgcolor {
+  background-color: #ffffff !important;
+  border: none;
+}
+
+.title-icon-upload {
+  color: #666666;
+}
+
+.button-add-recipe {
+  width: 100%;
+}

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import NewRecipes from "../components/NewRecipes";
+import NewRecipes from "../components/newRecipes";
 import Footer from "../components/Footer";
-import PopularRecipes from "../components/PopularRecipes";
+import PopularRecipes from "../components/popularRecipes";
 import { BiSearch } from "react-icons/bi";
 import Link from "next/link";
 import homeStyle from "../styles/Home.module.css";
-import RecipeList from "../components/RecipeList";
+import RecipeList from "../components/recipeList";
 
 const home = (props) => {
   const [newRecipe] = useState(props?.newRecipes?.data);

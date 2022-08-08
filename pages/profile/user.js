@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import profileStyle from "../../styles/profile.module.css";
 import Image from "next/image";
-import imageUser from "../../public/images/img-user-default.png";
 import { FiUser, FiAward, FiChevronRight, FiBookmark } from "react-icons/fi";
 import { BiLike } from "react-icons/bi";
 import Footer from "../../components/Footer";

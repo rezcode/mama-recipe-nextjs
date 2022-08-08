@@ -3,7 +3,7 @@ import popularMenuStyle from "../../styles/popularMenu.module.css";
 import Image from "next/image";
 import imgRecipe from "../../public/images/example-img.jpg";
 import homeStyles from "../../styles/Home.module.css";
-import HeaderProfile from "../../components/HeaderProfile";
+import HeaderProfile from "../../components/headerProfile";
 
 const LikedRecipe = () => {
   return (

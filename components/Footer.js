@@ -11,14 +11,35 @@ import { useRouter } from "next/router";
 const Footer = (props) => {
   const router = useRouter();
 
-  const handleRedirect = () => {
+  const handleRedirectProfile = () => {
     if (!props?.data?.token) {
       Swal.fire({
-        icon: "error",
+        icon: "warning",
+        showCancelButton: true,
         text: "You need to login first",
+        cancelButtonText: "later",
+        cancelButtonColor: "#D3D4D5",
+        confirmButtonText: "Go to Login",
+        confirmButtonColor: "#EFC81A",
       }).then((result) => (result.isConfirmed ? router.push("/login") : null));
     } else {
       router.push(`/profile/user`);
+    }
+  };
+
+  const handleRedirectAdd = () => {
+    if (!props?.data?.token) {
+      Swal.fire({
+        icon: "warning",
+        showCancelButton: true,
+        cancelButtonText: "later",
+        cancelButtonColor: "#D3D4D5",
+        confirmButtonText: "Go to Login",
+        confirmButtonColor: "#EFC81A",
+        text: "You need to login first",
+      }).then((result) => (result.isConfirmed ? router.push("/login") : null));
+    } else {
+      router.push(`/recipe/add`);
     }
   };
 
@@ -34,20 +55,26 @@ const Footer = (props) => {
             </Link>
           </div>
           <div className="col-3">
-            <Link href="/recipe/add" passHref>
-              <MdOutlineAddBox size={27} className={homeStyle.pointer} />
-            </Link>
+            {props?.data?.token ? (
+              <div onClick={handleRedirectAdd}>
+                <MdOutlineAddBox size={27} className={homeStyle.pointer} />
+              </div>
+            ) : (
+              <div onClick={handleRedirectAdd}>
+                <MdOutlineAddBox size={27} className={homeStyle.pointer} />
+              </div>
+            )}
           </div>
           <div className="col-3">
             <BsChat size={25} className={homeStyle.pointer} />
           </div>
           <div className="col-3">
             {props?.data?.token ? (
-              <div onClick={handleRedirect}>
+              <div onClick={handleRedirectProfile}>
                 <FiUser size={25} className={homeStyle.pointer} />
               </div>
             ) : (
-              <div onClick={handleRedirect}>
+              <div onClick={handleRedirectProfile}>
                 <FiUser size={25} className={homeStyle.pointer} />
               </div>
             )}

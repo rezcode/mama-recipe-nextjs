@@ -27,17 +27,19 @@ const recipeDetail = () => {
   const [show, setShow] = useState(false);
   const [isLike, setIsLike] = useState(false);
   const [isSave, setIsSave] = useState(false);
+  const [idLike, setIdLike] = useState(null);
   const router = useRouter();
   const { id } = router.query;
 
   useEffect(() => {
     setUserDataStorage(JSON.parse(localStorage?.getItem("userDataStorage")));
+    setIdLike(localStorage.getItem("idLike"));
     getDetailData();
     getLikeByUser();
     getVideoRecipe();
     getCommentData();
     getSaveByUser();
-  }, [id]);
+  }, [userDataStorage?.name, id, idLike]);
 
   const config = {
     headers: {
@@ -112,6 +114,74 @@ const recipeDetail = () => {
       });
   };
 
+  const handleLikeRecipe = () => {
+    setIsLoading(true);
+    const body = {
+      id_user: userDataStorage?.id,
+      id_recipe: id,
+    };
+
+    if (!userDataStorage?.token) {
+      Swal.fire({
+        icon: "warning",
+        text: "You need to login first",
+      }).then((result) => (result.isConfirmed ? router.push("/login") : null));
+    } else {
+      axios
+        .post(`${process.env.NEXT_PUBLIC_URL_API}/recipes/like`, body, config)
+        .then((res) => {
+          const target = res?.data?.data?.idLike?.rows[0]?.id;
+          localStorage.setItem("idLike", target);
+          setIdLike(target);
+        })
+        .catch((err) => {
+          Swal.fire({
+            icon: "warning",
+            text: "Something wrong, like recipe failed",
+          });
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
+  };
+
+  console.log("ini di like", idLike);
+
+  const handleDislikeRecipe = () => {
+    setIsLoading(true);
+
+    if (!userDataStorage?.token) {
+      Swal.fire({
+        icon: "warning",
+        text: "You need to login first",
+      }).then((result) => (result.isConfirmed ? router.push("/login") : null));
+    } else {
+      axios
+        .delete(
+          `${process.env.NEXT_PUBLIC_URL_API}/recipes/dislike/${idLike}`,
+          config
+        )
+        .then((res) => {
+          setIdLike(null);
+          // Swal.fire({
+          //   icon: "success",
+          //   text: "recipe unliked",
+          // }).then((result) => (result.isConfirmed ? router.reload() : null));
+        })
+        .catch((err) => {
+          console.log(err);
+          Swal.fire({
+            icon: "warning",
+            text: "Something wrong, like recipe failed",
+          });
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
+  };
+
   const handleAddVideo = (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -153,9 +223,6 @@ const recipeDetail = () => {
     }
   };
 
-  // console.log("detailRecipe", detailRecipe);
-  console.log("isSave", isSave);
-  console.log("isLike", isLike);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -188,11 +255,21 @@ const recipeDetail = () => {
                     style={{ paddingLeft: "0px" }}
                   >
                     {isLike ? (
-                      <button type="button" className="btn btn-warning">
+                      <button
+                        type="button"
+                        onClick={handleDislikeRecipe}
+                        disabled={isLoading}
+                        className="btn btn-warning"
+                      >
                         <BiLike color="white" size={25} />
                       </button>
                     ) : (
-                      <button type="button" className="btn btn-light">
+                      <button
+                        type="button"
+                        onClick={handleLikeRecipe}
+                        className="btn btn-light"
+                        disabled={isLoading}
+                      >
                         <BiLike color="#FFBF0A" size={25} />
                       </button>
                     )}

@@ -25,20 +25,56 @@ const recipeDetail = () => {
   const [videoLink, setVideoLink] = useState("");
   const [videoDesc, setVideoDesc] = useState("");
   const [show, setShow] = useState(false);
+  const [isLike, setIsLike] = useState(false);
+  const [isSave, setIsSave] = useState(false);
   const router = useRouter();
   const { id } = router.query;
 
   useEffect(() => {
     setUserDataStorage(JSON.parse(localStorage?.getItem("userDataStorage")));
     getDetailData();
+    getLikeByUser();
     getVideoRecipe();
     getCommentData();
+    getSaveByUser();
   }, [id]);
 
   const config = {
     headers: {
       Authorization: `Bearer ${userDataStorage?.token}`,
     },
+  };
+
+  const getLikeByUser = () => {
+    axios
+      .get(
+        `${process.env.NEXT_PUBLIC_URL_API}/recipes/like/${userDataStorage?.id}`
+      )
+      .then((res) => {
+        const likeStatus = res?.data?.data?.some(
+          (item) => item?.id_recipe == id
+        );
+        setIsLike(likeStatus);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const getSaveByUser = () => {
+    axios
+      .get(
+        `${process.env.NEXT_PUBLIC_URL_API}/recipes/save/${userDataStorage?.id}`
+      )
+      .then((res) => {
+        const saveStatus = res?.data?.data?.some(
+          (item) => item?.id_recipe == id
+        );
+        setIsSave(saveStatus);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const getDetailData = () => {
@@ -85,11 +121,12 @@ const recipeDetail = () => {
       video_link: videoLink,
       video_desc: videoDesc,
     };
-    if (videoLink === "" && videoDesc === "") {
+    if (videoLink === "" || videoDesc === "") {
       Swal.fire({
         icon: "error",
         text: "All Forms must be fullfiled",
       });
+      setIsLoading(false);
     } else {
       axios
         .post(
@@ -116,7 +153,9 @@ const recipeDetail = () => {
     }
   };
 
-  // console.log("detailRecipe?.id", detailRecipe?.id);
+  // console.log("detailRecipe", detailRecipe);
+  console.log("isSave", isSave);
+  console.log("isLike", isLike);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -134,14 +173,29 @@ const recipeDetail = () => {
               <div>
                 <div className="row">
                   <div className="col-4 text-center">
-                    <div className={recipeStyle.buttonClicked}>
-                      <FiBookmark color="white" size={35} />
-                    </div>
+                    {isSave ? (
+                      <button type="button" className="btn btn-warning">
+                        <FiBookmark color="white" size={25} />
+                      </button>
+                    ) : (
+                      <button type="button" className="btn btn-light">
+                        <FiBookmark color="#FFBF0A" size={25} />
+                      </button>
+                    )}
                   </div>
-                  <div className="col-4 text-center">
-                    <div className={recipeStyle.buttonUnclicked}>
-                      <BiLike color="#EEC302" size={35} />
-                    </div>
+                  <div
+                    className="col-4 text-center"
+                    style={{ paddingLeft: "0px" }}
+                  >
+                    {isLike ? (
+                      <button type="button" className="btn btn-warning">
+                        <BiLike color="white" size={25} />
+                      </button>
+                    ) : (
+                      <button type="button" className="btn btn-light">
+                        <BiLike color="#FFBF0A" size={25} />
+                      </button>
+                    )}
                   </div>
                 </div>
                 <p className="m-0">{detailRecipe?.title}</p>

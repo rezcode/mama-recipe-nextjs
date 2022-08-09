@@ -29,6 +29,11 @@
   text-align: end;
 }
 
+.imgList img {
+  border-radius: 15px;
+  object-fit: cover;
+}
+
 .buttonLike {
   padding-left: 0px;
 }

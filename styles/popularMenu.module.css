@@ -11,12 +11,21 @@
   font-size: larger;
 }
 
+.contentTitle {
+  margin-left: 16px;
+}
+
 .contentTitle p {
   margin: 0px;
 }
 
 .title {
   font-size: 16px;
+}
+
+.total {
+  font-size: smaller;
+  color: #6e80b0;
 }
 
 .ingredients {
@@ -27,6 +36,11 @@
 .buttonSave {
   padding-right: 5px;
   text-align: end;
+}
+
+.imgList img {
+  border-radius: 15px;
+  object-fit: cover;
 }
 
 .buttonLike {

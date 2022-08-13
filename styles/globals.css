@@ -52,6 +52,22 @@ a {
   border-radius: 15px !important;
 }
 
+.btn-outline-warning {
+  height: 50px;
+  border-radius: 15px !important;
+}
+
+.btn-light {
+  height: 50px;
+  border-radius: 15px !important;
+}
+
+.btn-outline-warning:hover {
+  color: white !important;
+  height: 50px;
+  border-radius: 15px !important;
+}
+
 /* Button end */
 
 /* custom tabs recipe detail */
@@ -96,6 +112,29 @@ a {
 }
 
 /* Add Recipe Page Detail */
+
+#editProfilePage .input-group-text {
+  border: none;
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  height: 60px;
+}
+
+#editProfilePage .form-control {
+  border: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: none;
+}
+
+#editProfilePage .bodyWrapper {
+  background-color: #e5e5e5;
+}
+
+/* Edit Profile Page */
+
+/* Edit Profile Page End */
 
 /* Login Page */
 #loginPage .input-group-text {

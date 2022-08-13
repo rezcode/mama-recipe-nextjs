@@ -15,10 +15,7 @@ const NewRecipes = (props) => {
             <div key={index} className="ml-2">
               <div className={`card ${homeStyles.cardImageNewRecipes}`}>
                 <Image
-                  src={`http://localhost:8000/${item.food_image.replace(
-                    "public/",
-                    ""
-                  )}`}
+                  src={item.food_image}
                   layout="fill"
                   className={homeStyles.ImageNewRecipes}
                   alt="Picture of the author"

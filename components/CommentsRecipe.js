@@ -15,10 +15,7 @@ const CommentsRecipe = (props) => {
                 <div className="col-3 text-center">
                   <div className={recipeStyle.commendAvatar}>
                     <Image
-                      src={`http://localhost:8000/${item?.image_profile?.replace(
-                        "public/",
-                        ""
-                      )}`}
+                      src={item?.image_profile}
                       width={60}
                       height={60}
                       className="text-center"

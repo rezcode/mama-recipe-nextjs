@@ -1,50 +1,78 @@
 import React from "react";
-import HeaderProfile from "../../components/HeaderProfile";
-import profileStyle from "../../styles/profile.module.css";
+import HeaderProfile from "../../components/headerProfile";
+// import profileStyle from "../../styles/profile.module.css";
+import { FiUser } from "react-icons/fi";
+import { HiOutlineMail } from "react-icons/hi";
+import { AiOutlinePhone } from "react-icons/ai";
+import { BiLockAlt } from "react-icons/bi";
 
 const EditProfile = () => {
   return (
     <>
-      <div className="container">
+      <div id="editProfilePage" className="container">
         <div className="row justify-content-center">
-          <div className="col-md-4">
+          <div className={`col-md-4 bodyWrapper`}>
             <HeaderProfile header={"Edit Profile"} />
-            <div className="container" style={{ minHeight: "80vh" }}>
-              <div className="row mt-4">
-                <p className={profileStyle.pointer}>Change Photo Profile</p>
-              </div>
-              <hr className="mt-0" />
-              <div className="row">
-                <p className={profileStyle.pointer}>Change Password</p>
-              </div>
-              <hr className="mt-0" />
-            </div>
-            <div className={profileStyle.buttonProfile}>
-              <div className="row">
-                <div className="container">
-                  <div className="d-grid">
-                    <div
-                      className={`btn-group-vertical ${profileStyle.buttonPhoto}`}
-                    >
-                      <button type="button" className="btn btn-secondary">
-                        Photo Library
-                      </button>
-                      <button type="button" className="btn btn-secondary">
-                        Take Photo
+            <div className="container" style={{ minHeight: "100vh" }}>
+              <form>
+                <div className="input-group mb-3 mt-4">
+                  <span className="input-group-text" id="basic-addon1">
+                    <FiUser color="#8B8A8F" size={30} />
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Name"
+                    required
+                    // onChange={(e) => setTitle(e.target.value)}
+                  />
+                </div>
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    <HiOutlineMail color="#8B8A8F" size={30} />
+                  </span>
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="E-Mail"
+                    required
+                    // onChange={(e) => setTitle(e.target.value)}
+                  />
+                </div>
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    <AiOutlinePhone color="#8B8A8F" size={30} />
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Phone Number"
+                    required
+                    // onChange={(e) => setTitle(e.target.value)}
+                  />
+                </div>
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    <BiLockAlt color="#8B8A8F" size={30} />
+                  </span>
+                  <input
+                    type="password"
+                    className="form-control"
+                    placeholder="Password"
+                    required
+                    // onChange={(e) => setTitle(e.target.value)}
+                  />
+                </div>
+                <div className="row justify-content-center mt-4">
+                  <div className="col-7">
+                    <div className="d-grid gap-2">
+                      <button className="btn btn-warning" type="submit">
+                        Submit
                       </button>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="row mt-2">
-                <div className="container">
-                  <div className={`d-grid ${profileStyle.buttonCancel}`}>
-                    <button type="button" className="btn btn-secondary">
-                      Cancel
-                    </button>
-                  </div>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

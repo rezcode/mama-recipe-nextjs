@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
-import NewRecipes from "../components/NewRecipes";
-import Footer from "../components/Footer";
-import PopularRecipes from "../components/PopularRecipes";
+import NewRecipes from "../components/newRecipes";
+import Footer from "../components/footer";
+import PopularRecipes from "../components/popularRecipes";
 import { BiSearch } from "react-icons/bi";
 import Link from "next/link";
 import homeStyle from "../styles/Home.module.css";
-import RecipeList from "../components/RecipeList";
+import RecipeList from "../components/recipeList";
 
 const home = (props) => {
   const [newRecipe] = useState(props?.newRecipes?.data);
   const [popularRecipe] = useState(props?.popularRecipes?.data);
   const [allRecipes] = useState(props?.allRecipes?.data);
   const [search, setSearch] = useState("");
+  const [userDataStorage, setUserDataStorage] = useState({});
 
   useEffect(() => {
+    setUserDataStorage(JSON.parse(localStorage?.getItem("userDataStorage")));
     allRecipes;
     newRecipe;
     popularRecipe;
@@ -66,7 +68,7 @@ const home = (props) => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer data={userDataStorage} />
     </>
   );
 };

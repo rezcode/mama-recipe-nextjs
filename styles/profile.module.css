@@ -1,13 +1,49 @@
 .bgTopWrapper {
   background-color: #eec302;
-  height: 50vh;
+  height: 65vh;
 }
 
 .bgTopWrapper img {
   border-radius: 50%;
-  width: 100px !important;
-  height: 100px !important;
+  width: 180px !important;
+  height: 180px !important;
   object-fit: cover;
+  display: block;
+}
+
+.avatarWrapper {
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 190px;
+  height: 190px;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50%;
+  padding-top: 75px;
+  cursor: pointer;
+}
+
+.overlay p {
+  font-size: small;
+  color: #eec300;
+}
+
+.avatarWrapper .overlay {
+  opacity: 1;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 .bgBotWrapper {

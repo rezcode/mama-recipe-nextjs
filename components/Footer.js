@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import homeStyle from "../styles/footer.module.css";
 import { FiHome } from "react-icons/fi";
 import { MdOutlineAddBox } from "react-icons/md";
@@ -51,13 +51,21 @@ const Footer = (props) => {
         <div className={`row justify-content-center`}>
           <div className="col-3">
             <Link href="/" passHref>
-              <FiHome size={25} className={homeStyle.pointer} />
+              <FiHome
+                size={25}
+                color={router.pathname == "/" ? "#EFC81A" : null}
+                className={homeStyle.pointer}
+              />
             </Link>
           </div>
           <div className="col-3">
             {props?.data?.token ? (
               <div onClick={handleRedirectAdd}>
-                <MdOutlineAddBox size={27} className={homeStyle.pointer} />
+                <MdOutlineAddBox
+                  color={router.pathname == "/recipe/add" ? "#EFC81A" : null}
+                  size={27}
+                  className={homeStyle.pointer}
+                />
               </div>
             ) : (
               <div onClick={handleRedirectAdd}>
@@ -71,7 +79,11 @@ const Footer = (props) => {
           <div className="col-3">
             {props?.data?.token ? (
               <div onClick={handleRedirectProfile}>
-                <FiUser size={25} className={homeStyle.pointer} />
+                <FiUser
+                  size={25}
+                  color={router.pathname == "/profile/user" ? "#EFC81A" : null}
+                  className={homeStyle.pointer}
+                />
               </div>
             ) : (
               <div onClick={handleRedirectProfile}>

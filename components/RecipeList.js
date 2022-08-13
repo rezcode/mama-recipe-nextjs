@@ -25,14 +25,7 @@ const RecipeList = (props) => {
                 className={`row mb-3 ${recipeListStyle.pointer}`}
               >
                 <div className={`col-3 ${recipeListStyle.recipeImg}`}>
-                  <Image
-                    src={`http://localhost:8000/${item.food_image.replace(
-                      "public/",
-                      ""
-                    )}`}
-                    height={85}
-                    width={80}
-                  />
+                  <Image src={item.food_image} height={85} width={80} />
                 </div>
                 <div className="col-9">
                   <p className={recipeListStyle.title}>{item.title}</p>

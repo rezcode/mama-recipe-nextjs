@@ -61,16 +61,13 @@ const MyRecipe = () => {
                   >
                     <div className={`col-3 ${popularMenuStyle.imgList}`}>
                       <Image
-                        src={`http://localhost:8000/${item.food_image?.replace(
-                          "public/",
-                          ""
-                        )}`}
+                        src={item.food_image}
                         height={110}
                         width={110}
                         className={homeStyles.imagePopular}
                       />
                     </div>
-                    <div className={`col-9 ${popularMenuStyle.contentTitle}`}>
+                    <div className={`col-8 ${popularMenuStyle.contentTitle}`}>
                       <p className={popularMenuStyle.title}>{item.title}</p>
                       <p className={popularMenuStyle.ingredients}>
                         {item.ingredients?.split(" ").slice(0, 2).join(" ")}

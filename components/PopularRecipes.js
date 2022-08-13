@@ -12,14 +12,7 @@ const PopularRecipes = (props) => {
           <Link href={`recipe/${item.id_recipe}`} passHref>
             <div key={index} className="row mb-3" style={{ cursor: "pointer" }}>
               <div className={`col-3 ${homeStyles.imagePopular}`}>
-                <Image
-                  src={`http://localhost:8000/${item.food_image.replace(
-                    "public/",
-                    ""
-                  )}`}
-                  height={64}
-                  width={64}
-                />
+                <Image src={item.food_image} height={64} width={64} />
               </div>
               <div className="col-9">
                 <p className={homeStyles.title}>{item.title}</p>

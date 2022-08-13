@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NewRecipes from "../components/newRecipes";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 import PopularRecipes from "../components/popularRecipes";
 import { BiSearch } from "react-icons/bi";
 import Link from "next/link";

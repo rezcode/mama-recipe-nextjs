@@ -64,10 +64,7 @@ const PopularMenu = () => {
                     style={{ paddingRight: "0px" }}
                   >
                     <Image
-                      src={`http://localhost:8000/${item.food_image.replace(
-                        "public/",
-                        ""
-                      )}`}
+                      src={item.food_image}
                       height={110}
                       width={110}
                       className={homeStyles.imagePopular}
@@ -79,12 +76,9 @@ const PopularMenu = () => {
                       {item.ingredients.split(" ").slice(0, 2).join(" ")}
                     </p>
                     <p className={popularMenuStyle.title}>{item.category}</p>
-                  </div>
-                  <div className={`col-2 ${popularMenuStyle.buttonSave}`}>
-                    <Image src={savedButton} />
-                  </div>
-                  <div className={`col-2 ${popularMenuStyle.buttonLike}`}>
-                    <Image src={likeButton} />
+                    <p className={popularMenuStyle.total}>
+                      Total liked {item.total}
+                    </p>
                   </div>
                 </div>
               </Link>

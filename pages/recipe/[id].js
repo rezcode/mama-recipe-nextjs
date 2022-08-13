@@ -22,6 +22,7 @@ const recipeDetail = () => {
   const [detailRecipe, setDetailRecipe] = useState([]);
   const [videoRecipe, setVideoRecipe] = useState([]);
   const [commentUserData, setCommentUserData] = useState([]);
+  const [comment, setComment] = useState("");
   const [videoLink, setVideoLink] = useState("");
   const [videoDesc, setVideoDesc] = useState("");
   const [show, setShow] = useState(false);
@@ -146,6 +147,35 @@ const recipeDetail = () => {
     }
   };
 
+  const handleAddComment = () => {
+    setIsLoading(true);
+    const body = {
+      comment: comment,
+      idRecipe: detailRecipe?.id,
+      idUser: userDataStorage?.id,
+    };
+
+    if (comment === "") {
+      Swal.fire("Comment must be filled");
+      setIsLoading(false);
+    } else {
+      axios
+        .post(`${process.env.NEXT_PUBLIC_URL_API}/comments/add`, body, config)
+        .then((res) => router.reload())
+        .catch((err) => {
+          Swal.fire({
+            icon: "warning",
+            text: "You need to login first",
+          }).then((result) =>
+            result.isConfirmed ? router.push("/login") : null
+          );
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
+  };
+
   console.log("ini di like", idLike);
 
   const handleDislikeRecipe = () => {
@@ -223,6 +253,7 @@ const recipeDetail = () => {
     }
   };
 
+  console.log("ini detail recipe", detailRecipe);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -279,13 +310,7 @@ const recipeDetail = () => {
                 <span>By {detailRecipe?.recipe_owner}</span>
               </div>
             </div>
-            <Image
-              src={`http://localhost:8000/${detailRecipe?.food_image?.replace(
-                "public/",
-                ""
-              )}`}
-              layout="fill"
-            />
+            <Image src={detailRecipe?.food_image} layout="fill" />
           </div>
           <div className={`row ${recipeStyle.wrapperBot}`}>
             <div className={`container ${recipeStyle.tabMenu}`}>
@@ -338,7 +363,6 @@ const recipeDetail = () => {
                       })
                     ) : (
                       <>
-                        {/* depepe */}
                         <div className="container">
                           <div className="row mb-3 text-center">
                             <div className={recipeStyle.ingredients}>
@@ -497,12 +521,22 @@ const recipeDetail = () => {
                         rows={3}
                         defaultValue={""}
                         placeholder="Comment :"
+                        onChange={(e) => setComment(e.target.value)}
                       />
                     </div>
                     <div className="mx-1 my-3">
                       <div className="d-grid gap-2">
-                        <button className="btn btn-warning" type="button">
-                          Post Comment
+                        <button
+                          className="btn btn-warning"
+                          onClick={handleAddComment}
+                          type="button"
+                          disabled={isLoading}
+                        >
+                          {isLoading ? (
+                            <Spinner animation="border" variant="light" />
+                          ) : (
+                            "Post Comment"
+                          )}
                         </button>
                       </div>
                       <div className="row">

@@ -1,0 +1,54 @@
+.bodyWrapper {
+  min-height: 100vh;
+  padding: 0px;
+  position: relative;
+}
+
+.bodyWrapper img {
+  width: 180px !important;
+  height: 180px !important;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.welcomeBody h5 {
+  color: #efc81a;
+}
+
+.welcomeBody p {
+  color: #c4c4c4;
+}
+
+.forgotPassword {
+  margin-top: 7px;
+  color: #999999;
+}
+
+.forgotPassword span {
+  color: #efc81a;
+  cursor: pointer;
+  font-size: larger;
+}
+
+/* Register page */
+.navBack svg {
+  cursor: pointer;
+  margin: 15px;
+}
+
+.getStarted h5 {
+  color: #efc81a;
+}
+
+.getStarted p {
+  color: #999999;
+  font-size: smaller;
+  font-weight: lighter;
+}
+
+.registerWrapper {
+  min-height: 100vh;
+  padding: 0px;
+  position: relative;
+  background-color: #e5e5e5;
+}

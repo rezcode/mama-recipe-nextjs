@@ -46,7 +46,7 @@ const add = () => {
     formData.append("id_user", userDataStorage?.id);
 
     axios
-      .post(`http://localhost:8000/recipes/add`, formData, config)
+      .post(`${process.env.NEXT_PUBLIC_URL_API}/recipes/add`, formData, config)
       .then((res) => {
         Swal.fire({
           icon: "success",

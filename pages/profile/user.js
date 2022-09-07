@@ -38,7 +38,10 @@ const ProfileUser = () => {
 
   const getProfileUser = () => {
     axios
-      .get(`http://localhost:8000/users/${userDataStorage?.id}`, config)
+      .get(
+        `${process.env.NEXT_PUBLIC_URL_API}/users/${userDataStorage?.id}`,
+        config
+      )
       .then((res) => {
         setUserProfile(res?.data?.data[0]);
       })

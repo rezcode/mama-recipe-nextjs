@@ -19,7 +19,10 @@ const login = () => {
   const handleLogin = () => {
     setIsLoading(true);
     axios
-      .post(`http://localhost:8000/auth/login`, { email, password })
+      .post(`${process.env.NEXT_PUBLIC_URL_API}/auth/login`, {
+        email,
+        password,
+      })
       .then((res) => {
         const userDataStorage = {
           id: res?.data?.data?.id,

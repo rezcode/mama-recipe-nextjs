@@ -23,7 +23,7 @@ const home = (props) => {
 
   return (
     <>
-      <div>
+      <div style={{ minHeight: "90vh" }}>
         <div id="homePage" className="container">
           <div className="row justify-content-center">
             <div className="col-md-4">
@@ -56,12 +56,12 @@ const home = (props) => {
                       <h5>Popular Recipes</h5>
                     </div>
                     <div className={`col-5 text-end ${homeStyle.pointer}`}>
-                      <Link href="/popular-menu">
+                      <Link href="/recipe/popular-recipe">
                         <span>more info</span>
                       </Link>
                     </div>
                   </div>
-                  <PopularRecipes data={popularRecipe} />
+                  <PopularRecipes data={popularRecipe?.slice(-4)} />
                 </div>
               </div>
             </div>
@@ -75,9 +75,9 @@ const home = (props) => {
 
 export async function getServerSideProps(context) {
   const [newRecipesRes, popularRecipesRes, allRecipesRes] = await Promise.all([
-    fetch("http://localhost:8000/recipes/find/recent"),
-    fetch("http://localhost:8000/recipes/popular"),
-    fetch("http://localhost:8000/recipes"),
+    fetch(`${process.env.NEXT_PUBLIC_URL_API}/recipes/find/recent`),
+    fetch(`${process.env.NEXT_PUBLIC_URL_API}/recipes/popular`),
+    fetch(`${process.env.NEXT_PUBLIC_URL_API}/recipes`),
   ]);
 
   const [newRecipes, popularRecipes, allRecipes] = await Promise.all([

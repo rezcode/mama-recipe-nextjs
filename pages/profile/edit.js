@@ -20,8 +20,9 @@ const EditProfile = () => {
     setUserDataStorage(JSON.parse(localStorage?.getItem("userDataStorage")));
   }, []);
 
+  console.log("localstorage", userDataStorage);
+
   const handleEdit = (values) => {
-    // console.log("form values", values);
     const { name, email, phoneNumber, password } = values;
     const config = {
       headers: {
@@ -36,7 +37,6 @@ const EditProfile = () => {
       password,
     };
 
-    console.log("body", body);
     if (name === "" && email === "" && phoneNumber === "" && password === "") {
       Swal.fire({
         icon: "warning",
@@ -59,7 +59,10 @@ const EditProfile = () => {
           );
         })
         .catch((err) => {
-          console.log(err);
+          Swal.fire({
+            icon: "error",
+            text: "Something wrong, Update data Failed",
+          });
         })
         .finally(() => {
           formik.setSubmitting(false);
@@ -108,7 +111,7 @@ const EditProfile = () => {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Name"
+                    placeholder={userDataStorage?.name}
                     name="name"
                     value={formik.values.name}
                     onChange={formik.handleChange}
@@ -122,7 +125,7 @@ const EditProfile = () => {
                   <input
                     type="email"
                     className="form-control"
-                    placeholder="E-Mail"
+                    placeholder={userDataStorage?.email}
                     name="email"
                     value={formik.values.email}
                     onChange={formik.handleChange}
@@ -136,7 +139,7 @@ const EditProfile = () => {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Phone Number"
+                    placeholder={userDataStorage?.phone_number}
                     name="phoneNumber"
                     value={formik.values.phoneNumber}
                     onChange={formik.handleChange}

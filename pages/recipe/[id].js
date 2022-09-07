@@ -253,7 +253,6 @@ const recipeDetail = () => {
     }
   };
 
-  console.log("ini detail recipe", detailRecipe);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 

@@ -11,26 +11,8 @@ import Image from "next/image";
 function Items({ currentItems }) {
   return (
     <>
-      <div className="container" style={{ minHeight: "90vh" }}>
-        <div className="row justify-content-center">
-          <div className="col-md-4">
-            <div className="row mt-3">
-              <div className="col-4">
-                <div className={popularMenuStyle.navBack}>
-                  <Link href={"/"} passHref>
-                    <FiChevronLeft size={40} />
-                  </Link>
-                </div>
-              </div>
-              <div className="col-7">
-                <div className={popularMenuStyle.verticalCenter}>
-                  <p className="mt-1">Popular Menu</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {currentItems ? (
+      <div style={{ minHeight: "75vh" }}>
+        {currentItems?.length !== 0 ? (
           currentItems?.map((item, index) => (
             <Link href={`/recipe/${item.id_recipe}`} passHref>
               <div

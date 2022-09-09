@@ -13,7 +13,7 @@ import { BiLike } from "react-icons/bi";
 import { BsPlay } from "react-icons/bs";
 import { AiFillInfoCircle } from "react-icons/ai";
 import axios from "axios";
-import CommentsRecipe from "../../components/commentsRecipe";
+import CommentsRecipe from "../../components/CommentsRecipe";
 import Swal from "sweetalert2";
 
 const recipeDetail = () => {

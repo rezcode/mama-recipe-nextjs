@@ -36,7 +36,7 @@ const register = () => {
       setIsLoading(false);
     } else {
       axios
-        .post("http://localhost:8000/auth/register", body)
+        .post(`${process.env.NEXT_PUBLIC_URL_API}/auth/register`, body)
         .then((res) => {
           Swal.fire({
             icon: "success",

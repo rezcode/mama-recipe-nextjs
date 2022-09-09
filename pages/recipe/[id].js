@@ -161,7 +161,9 @@ const recipeDetail = () => {
     } else {
       axios
         .post(`${process.env.NEXT_PUBLIC_URL_API}/comments/add`, body, config)
-        .then((res) => router.reload())
+        .then((res) => {
+          getCommentData();
+        })
         .catch((err) => {
           Swal.fire({
             icon: "warning",
@@ -175,8 +177,6 @@ const recipeDetail = () => {
         });
     }
   };
-
-  console.log("ini di like", idLike);
 
   const handleDislikeRecipe = () => {
     setIsLoading(true);
@@ -238,7 +238,7 @@ const recipeDetail = () => {
           Swal.fire({
             icon: "success",
             text: "Step Video Added",
-          }).then((result) => (result.isConfirmed ? router.reload() : null));
+          }).then((result) => (result.isConfirmed ? getVideoRecipe() : null));
         })
         .catch((err) => {
           const { message } = err?.response?.data;
@@ -253,7 +253,6 @@ const recipeDetail = () => {
     }
   };
 
-  console.log("ini detail recipe", detailRecipe);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 

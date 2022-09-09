@@ -9,16 +9,16 @@ const PopularRecipes = (props) => {
     const jsx = props?.data?.map((item, index) => {
       return (
         <>
-          <Link href={`recipe/${item.id_recipe}`} passHref>
-            <div key={index} className="row mb-3" style={{ cursor: "pointer" }}>
+          <Link href={`recipe/${item.id_recipe}`} key={index} passHref>
+            <div className="row mb-3" style={{ cursor: "pointer" }}>
               <div className={`col-3 ${homeStyles.imagePopular}`}>
                 <Image src={item.food_image} height={64} width={64} />
               </div>
               <div className="col-9">
                 <p className={homeStyles.title}>{item.title}</p>
                 <p className={homeStyles.rating}>
-                  <AiFillStar color="#FFB300" /> 4.6{" "}
-                  <span>{item.category}</span>
+                  <AiFillStar color="#FFB300" />
+                  4.6 <span>{item.category}</span>
                 </p>
               </div>
             </div>

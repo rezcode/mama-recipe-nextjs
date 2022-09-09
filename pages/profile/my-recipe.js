@@ -70,7 +70,8 @@ const MyRecipe = () => {
                     <div className={`col-8 ${popularMenuStyle.contentTitle}`}>
                       <p className={popularMenuStyle.title}>{item.title}</p>
                       <p className={popularMenuStyle.ingredients}>
-                        {item.ingredients?.split(" ").slice(0, 2).join(" ")}
+                        {item.ingredients?.split(" ").slice(0, 2).join(" ")} -
+                        more...
                       </p>
                       <p className={popularMenuStyle.title}>{item.category}</p>
                     </div>

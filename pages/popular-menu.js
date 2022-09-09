@@ -2,21 +2,14 @@ import React, { useEffect, useState } from "react";
 import { FiChevronLeft } from "react-icons/fi";
 import popularMenuStyle from "../styles/popularMenu.module.css";
 import Image from "next/image";
-import imgRecipe from "../public/images/example-img.jpg";
 import homeStyles from "../styles/Home.module.css";
-import savedButton from "../public/images/saved.png";
-import likedButton from "../public/images/liked.png";
-import saveButton from "../public/images/save.png";
-import likeButton from "../public/images/like.png";
 import Link from "next/link";
 import axios from "axios";
 
 const PopularMenu = () => {
   const [popularList, setPopularList] = useState([]);
-  const [userDataStorage, setUserDataStorage] = useState({});
 
   useEffect(() => {
-    setUserDataStorage(JSON.parse(localStorage?.getItem("userDataStorage")));
     getPopular();
   }, []);
 

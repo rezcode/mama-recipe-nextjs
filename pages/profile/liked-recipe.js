@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import popularMenuStyle from "../../styles/popularMenu.module.css";
 import Image from "next/image";
 import homeStyles from "../../styles/Home.module.css";
-import HeaderProfile from "../../components/headerProfile";
+import HeaderProfile from "../../components/HeaderProfile";
 import axios from "axios";
 import Link from "next/link";
 import { TbDatabaseOff } from "react-icons/tb";

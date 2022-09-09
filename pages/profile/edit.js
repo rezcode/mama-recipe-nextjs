@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import HeaderProfile from "../../components/headerProfile";
+import HeaderProfile from "../../components/HeaderProfile";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { FiUser } from "react-icons/fi";

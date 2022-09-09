@@ -1,34 +1,104 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+<div id="top"></div>
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/rezcode/mama-recipe-nextjs.git">
+    <img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662477322/screenshots/logo_wqvc5k.png" alt="Logo" width="150px">
+  </a>
+
+  <h3 align="center">Mama Recipe App Frontend Mobile View</h3>
+
+  <p align="center">
+    Create an app for building Mama Recipe frontend mobile using Next JS.
+  </p>
+</div>
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+Mama Recipe is web based app for provide recipe food with videos step, ingredients and comment section for all users
+
+<!-- SCREENSHOTS -->
+## Screenshots
+<table>
+  <tr>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662724125/screenshots/Mama-Recipe/login_j9du7o.png" alt="Home" width="180px"></td>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662724125/screenshots/Mama-Recipe/register_fpuhcn.png" alt="Home" width="180px"></td>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/Home_ls28nx.png" alt="Home" width="180px"></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/Popular_List_p8q7l2.png" alt="Home" width="180px"></td>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/Recipe_Detail_o9bahb.png" alt="Home" width="180px"></td>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/Profile_User_laqfbn.png" alt="Home" width="180px"></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723593/screenshots/Mama-Recipe/Add_New_Recipe_xv1neq.png" alt="Home" width="180px"></td>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/My_Recipes_qyfjju.png" alt="Home" width="180px"></td>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723593/screenshots/Mama-Recipe/Liked_Recipe_se1fke.png" alt="Home" width="180px"></td>
+  </tr>
+</table>
+
+### Built With
+This app was built with some technologies below:
+- [Next js](https://nextjs.org/)
+- [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Axios](https://www.npmjs.com/package/axios)
+- [Slick Carousel](https://www.npmjs.com/package/slick-carousel)
+- [Formik](https://formik.org/)
+- [Yup](https://www.npmjs.com/package/yup)
+
+<!-- GETTING STARTED -->
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
+This is an example of how to list things you need to use the software and how to install them.
+
+* [Node.js](https://nodejs.org/en/download/)
+
+### Requirements
+* [Node.js](https://nodejs.org/en/)
+* [NPM](https://www.npmjs.com/)
+* [Yarn](https://yarnpkg.com/) optional
+
+### Installation
+
+- Clone the Repo
+```
+https://github.com/rezcode/mama-recipe-nextjs.git
+```
+```
+- Install Module
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- <a href="#setup-env-example">Setup .env</a>
+- Type ` npm run build` To Build Project
+- Type ` npm run start` To Start Project
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Setup .env example
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Create .env file in your root project folder.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```env
+NEXT_PUBLIC_URL_API=https://mama-food-recipe.herokuapp.com
+```
 
-## Learn More
+## Related Project
+:rocket: [`Backend Mama-Recipe`](https://github.com/rezcode/food-recipe-expressJS.git)
 
-To learn more about Next.js, take a look at the following resources:
+:rocket: [`Frontend Mama-Recipe`](https://github.com/rezcode/mama-recipe-nextjs.git)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+:rocket: [`Demo`](https://mama-recipes.vercel.app/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contact
 
-## Deploy on Vercel
+My Email : rezharians@gmail.com
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
+Distributed under the [MIT](/LICENSE) License.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p align="right">(<a href="#top">back to top</a>)</p>

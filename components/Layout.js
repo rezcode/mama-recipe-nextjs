@@ -1,8 +1,14 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
 const Layout = ({ children }) => {
+  const [userDataStorage, setUserDataStorage] = useState({});
+  useEffect(() => {
+    setUserDataStorage(JSON.parse(localStorage?.getItem("userDataStorage")));
+  }, []);
+
   return (
     <>
       <Header />
@@ -13,7 +19,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer data={userDataStorage} />
     </>
   );
 };

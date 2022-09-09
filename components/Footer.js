@@ -2,7 +2,7 @@ import React from "react";
 import homeStyle from "../styles/footer.module.css";
 import { FiHome } from "react-icons/fi";
 import { MdOutlineAddBox } from "react-icons/md";
-import { BsChat } from "react-icons/bs";
+import { RiRestaurant2Line } from "react-icons/ri";
 import { FiUser } from "react-icons/fi";
 import Link from "next/link";
 import Swal from "sweetalert2";
@@ -51,11 +51,13 @@ const Footer = (props) => {
         <div className={`row justify-content-center`}>
           <div className="col-3">
             <Link href="/" passHref>
-              <FiHome
-                size={25}
-                color={router.pathname == "/" ? "#EFC81A" : null}
-                className={homeStyle.pointer}
-              />
+              <a>
+                <FiHome
+                  size={25}
+                  color={router.pathname == "/" ? "#EFC81A" : null}
+                  className={homeStyle.pointer}
+                />
+              </a>
             </Link>
           </div>
           <div className="col-3">
@@ -74,7 +76,19 @@ const Footer = (props) => {
             )}
           </div>
           <div className="col-3">
-            <BsChat size={25} className={homeStyle.pointer} />
+            <Link href="/recipe/all-recipe" passHref>
+              <a>
+                <RiRestaurant2Line
+                  size={25}
+                  className={homeStyle.pointer}
+                  color={
+                    router.pathname == "/recipe/all-recipe"
+                      ? "#EFC81A"
+                      : "black"
+                  }
+                />
+              </a>
+            </Link>
           </div>
           <div className="col-3">
             {props?.data?.token ? (

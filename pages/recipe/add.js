@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../../components/footer";
+import Footer from "../../components/Footer";
 import addRecipeStyle from "../../styles/addRecipe.module.css";
 import { IoMdBook } from "react-icons/io";
 import { BiImageAlt } from "react-icons/bi";
@@ -135,7 +135,10 @@ const add = () => {
                       onChange={handleImage}
                       hidden
                     />
-                    <label className={addRecipeStyle.labelUpload} for="upload">
+                    <label
+                      className={addRecipeStyle.labelUpload}
+                      htmlFor="upload"
+                    >
                       <div className={addRecipeStyle.iconUpload}>
                         <BiImageAlt size={40} color="#8B8A8F" />
                         <p className="mt-2 title-icon-upload text-muted">

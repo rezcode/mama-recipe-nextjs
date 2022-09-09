@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NewRecipes from "../components/newRecipes";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import PopularRecipes from "../components/popularRecipes";
 import { BiSearch } from "react-icons/bi";
 import Link from "next/link";
@@ -23,7 +23,7 @@ const home = (props) => {
 
   return (
     <>
-      <div style={{ minHeight: "90vh" }}>
+      <div style={{ minHeight: "100vh" }}>
         <div id="homePage" className="container">
           <div className="row justify-content-center">
             <div className="col-md-4">
@@ -46,7 +46,14 @@ const home = (props) => {
                     <RecipeList search={search} data={allRecipes} />
                   </div>
                   <div className="row mt-3 mb-3">
-                    <h5>New Recipes</h5>
+                    <div className="col-6">
+                      <h5>New Recipes</h5>
+                    </div>
+                    <div className={`col-5 text-end ${homeStyle.pointer}`}>
+                      <Link href="/recipe/all-recipe">
+                        <span>all recipe</span>
+                      </Link>
+                    </div>
                   </div>
                   <div className="row">
                     <NewRecipes data={newRecipe} />

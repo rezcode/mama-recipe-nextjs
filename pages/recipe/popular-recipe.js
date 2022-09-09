@@ -98,7 +98,11 @@ const PopularList = () => {
             </div>
           </div>
           <div className="container">
-            <PaginatedItems itemsPerPage={4} data={items} />
+            <div className="row justify-content-center">
+              <div className="col-md-4">
+                <PaginatedItems itemsPerPage={4} data={items} />
+              </div>
+            </div>
           </div>
         </>
       )}

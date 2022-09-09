@@ -11,8 +11,8 @@ const NewRecipes = (props) => {
     const jsx = props?.data?.map((item, index) => {
       return (
         <>
-          <Link href={`recipe/${item.id}`} passHref>
-            <div key={index} className="ml-2">
+          <Link href={`recipe/${item.id}`} key={index} passHref>
+            <div className="ml-2">
               <div className={`card ${homeStyles.cardImageNewRecipes}`}>
                 <Image
                   src={item.food_image}

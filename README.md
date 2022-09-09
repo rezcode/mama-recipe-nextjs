@@ -21,27 +21,23 @@ Mama Recipe is web based app for provide recipe food with videos step, ingredien
 
 <!-- SCREENSHOTS -->
 ## Screenshots
-<img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662724125/screenshots/Mama-Recipe/login_j9du7o.png" alt="Home" width="180px">
-&nbsp;&nbsp;
-<img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662724125/screenshots/Mama-Recipe/register_fpuhcn.png" alt="Home" width="180px">
-&nbsp;&nbsp;
-<br/><br/>
-<img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/Home_ls28nx.png" alt="Home" width="180px">
-&nbsp;&nbsp;
-<img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/Popular_List_p8q7l2.png" alt="Home" width="180px">
-&nbsp;&nbsp;
-<img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/Recipe_Detail_o9bahb.png" alt="Home" width="180px">
-&nbsp;&nbsp;
-<br/><br/>
-<img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/Profile_User_laqfbn.png" alt="Home" width="180px">
-&nbsp;&nbsp;
-<img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723593/screenshots/Mama-Recipe/Add_New_Recipe_xv1neq.png" alt="Home" width="180px">
-&nbsp;&nbsp;
-<img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/My_Recipes_qyfjju.png" alt="Home" width="180px">
-<br/>
-<br/>
-<img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723593/screenshots/Mama-Recipe/Liked_Recipe_se1fke.png" alt="Home" width="180px">
-
+<table>
+  <tr>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662724125/screenshots/Mama-Recipe/login_j9du7o.png" alt="Home" width="180px"></td>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662724125/screenshots/Mama-Recipe/register_fpuhcn.png" alt="Home" width="180px"></td>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/Home_ls28nx.png" alt="Home" width="180px"></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/Popular_List_p8q7l2.png" alt="Home" width="180px"></td>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/Recipe_Detail_o9bahb.png" alt="Home" width="180px"></td>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/Profile_User_laqfbn.png" alt="Home" width="180px"></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723593/screenshots/Mama-Recipe/Add_New_Recipe_xv1neq.png" alt="Home" width="180px"></td>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723594/screenshots/Mama-Recipe/My_Recipes_qyfjju.png" alt="Home" width="180px"></td>
+    <td valign="top"><img src="https://res.cloudinary.com/dll4afml9/image/upload/v1662723593/screenshots/Mama-Recipe/Liked_Recipe_se1fke.png" alt="Home" width="180px"></td>
+  </tr>
+</table>
 
 ### Built With
 This app was built with some technologies below:

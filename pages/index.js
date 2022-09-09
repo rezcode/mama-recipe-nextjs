@@ -23,7 +23,7 @@ const home = (props) => {
 
   return (
     <>
-      <div style={{ minHeight: "100vh" }}>
+      <div style={{ minHeight: "130vh" }}>
         <div id="homePage" className="container">
           <div className="row justify-content-center">
             <div className="col-md-4">
